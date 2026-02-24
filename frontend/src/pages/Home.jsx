@@ -9,9 +9,9 @@ function Home() {
           <h2 className="logo">GRIDGUARD</h2>
           <div className="nav-links">
             <a href="#about">About</a>
-            <a href="#tech">Technology</a>
-            <a href="#impact">Impact</a>
-            <a href="#business">Business</a>
+            <a href="#tech">Technology Stack</a>
+            <a href="#impact">Economic Impact</a>
+            <a href="#business">Business Model</a>
           </div>
         </nav>
 
@@ -33,7 +33,7 @@ function Home() {
       </section>
 
       {/* TECHNOLOGICAL STACK */}
-      <section id="tech" className="section">
+      <section id="tech" className="tech">
         <h2>Technological Stack</h2>
         <div className="grid">
           <div className="card">Current Transformers (CT Sensors)</div>
@@ -75,7 +75,7 @@ function Home() {
       </section>
 
       {/* BUSINESS MODEL */}
-      <section id="business" className="section">
+      <section id="business" className="model">
         <h2>Business Model</h2>
         <p>
           GRIDGUARD operates under a Monitoring-as-a-Service (MaaS) model.
@@ -88,7 +88,8 @@ function Home() {
       <section className="quote">
         <p>
           “Today: Kenya. Tomorrow: East Africa. Future: Smart Grids Across
-          Emerging Markets.”
+          Emerging Markets.GridGuard is just not a device but a foundation of a
+          smarter African Power infrastructure.”
         </p>
         <span>~ Kemboi Pheniline Jerono</span>
       </section>
