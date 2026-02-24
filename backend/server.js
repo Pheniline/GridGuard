@@ -18,6 +18,20 @@ function generateData() {
     overloadRisk: load > 90,
   };
 }
+const status = document.getElementById("theftStatus");
+
+// Example toggle
+function setTheftStatus(isSafe) {
+  if (isSafe) {
+    status.classList.remove("danger");
+    status.classList.add("safe");
+    status.textContent = "All clear";
+  } else {
+    status.classList.remove("safe");
+    status.classList.add("danger");
+    status.textContent = "Theft detected!";
+  }
+}
 
 app.get("/api/transformer", (req, res) => {
   res.json(generateData());

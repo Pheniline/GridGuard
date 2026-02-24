@@ -138,16 +138,3 @@ body {
 .nav-links a:hover::after {
   width: 100%;
 }
-
-/* 3. Different background colors for sections */
-.technology {
-  background: #1f2937; /* dark grayish */
-  color: #00ffcc; /* optional text color */
-  padding: 80px 40px;
-}
-
-.business {
-  background: #3b0764; /* purple-ish */
-  color: #ffcc00; /* optional text color */
-  padding: 80px 40px;
-}
