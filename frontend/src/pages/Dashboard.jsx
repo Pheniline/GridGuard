@@ -13,7 +13,7 @@ function Dashboard() {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          "https://gridguard.onrender.com/api/transformer",
+          `${import.meta.env.VITE_API_URL}/api/transformer`,
         );
         console.log("Fetched data:", res.data); // <- ADD THIS
         setData(res.data);
