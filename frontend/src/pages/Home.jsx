@@ -53,8 +53,15 @@ function Home() {
         <p className="highlight">
           What if engineers received a real-time alert 12 hours before failure?
         </p>
-
+      </section>
+      <section id="about" className="section dark slide-section">
         <h3>Problem Statement</h3>
+        <p>
+          Kenya Power and Lighting Company is our country’s pride aimed to
+          transmit, distribute & retail electricity to customers throughout
+          Kenya ; an entity that manages the power lines and your electricity
+          bills.Although Kenya’s power grid losses billions due to ;
+        </p>
 
         <ul className="bullet-list">
           <li>Electricity theft and illegal connections</li>
@@ -71,12 +78,12 @@ function Home() {
       </section>
 
       {/* PROPOSED SOLUTION */}
-      <section className="section dark slide-section">
+      <section className="section light slide-section">
         <h2>Proposed Solution</h2>
 
         <p>
           GRIDGUARD transforms passive transformers into intelligent, connected,
-          data-driven assets.
+          data-driven assets through ;
         </p>
 
         <ul className="bullet-list">
@@ -87,13 +94,24 @@ function Home() {
           <li>Consumption anomaly analysis</li>
         </ul>
 
+        <p>It then compares:</p>
+        <p> Transformer Output vs Total Registered Customer Consumption</p>
+        <p>
+          If there is a mismatch beyond acceptable tolerance → 🚨 Theft alert
+          triggered.
+        </p>
+        <p>
+          {" "}
+          If temperature rises abnormally → 🚨 Predictive overload warning.
+        </p>
+
         <p className="highlight">
           GridGuard does not wait for failure — it prevents it.
         </p>
       </section>
 
       {/* TECHNOLOGY STACK */}
-      <section id="tech" className="section light slide-section">
+      <section id="tech" className="section dark slide-section">
         <h2>Technological Stack</h2>
 
         <div className="grid">
@@ -103,11 +121,17 @@ function Home() {
           <div className="card">ESP32 Microcontroller</div>
           <div className="card">GSM / LoRa Communication</div>
           <div className="card">Cloud Analytics Engine</div>
+          <div className="card">Cloud dashboard</div>
+          <div className="card">Anomaly detection algorithm</div>
+          <div className="card">Predictive load model</div>
+          <div className="card"> Real-time alert system</div>
+          <div className="card">AI-based consumption pattern learning</div>
+          <div className="card">Automated maintenance scheduling</div>
         </div>
       </section>
 
       {/* LIVE DEMO */}
-      <section className="section dark slide-section demo">
+      <section className="section light slide-section demo">
         <h2>Live System Demonstration</h2>
         <p>Experience real-time transformer intelligence.</p>
         <Link to="/dashboard">
@@ -116,7 +140,7 @@ function Home() {
       </section>
 
       {/* SYSTEM ARCHITECTURE */}
-      <section className="section light slide-section">
+      <section className="section dark slide-section">
         <h2>System Architecture</h2>
         <img
           src="images/system-diagram.png"
@@ -126,8 +150,11 @@ function Home() {
       </section>
 
       {/* ECONOMIC IMPACT */}
-      <section id="impact" className="section dark slide-section">
+      <section id="impact" className="section light slide-section">
         <h2>Economic Impact</h2>
+        <p>
+          GridGuard reduces non-technical losses by just 5% this translates to;
+        </p>
 
         <ul className="bullet-list">
           <li>Increased revenue collection</li>
@@ -137,15 +164,21 @@ function Home() {
         </ul>
 
         <p className="highlight">
-          A 5% loss reduction can recover millions in annual revenue.
+          The percentage may seem small but improvement generates massive
+          financial returns.
         </p>
       </section>
 
       {/* BUSINESS MODEL */}
-      <section id="business" className="section light slide-section">
+      <section id="business" className="section dark slide-section">
         <h2>Business Model</h2>
 
-        <p>Monitoring-as-a-Service (MaaS)</p>
+        <p>
+          Once GridGuard starts operating instead as selling as a hardware we
+          may operate as Monitoring-as-a-Service (MaaS) KPLC pays per
+          transformer monthly subscription
+        </p>
+        <p>Example scenario:</p>
 
         <p className="highlight">
           5,000 transformers × KSh 2,000 per month =
@@ -153,14 +186,15 @@ function Home() {
           KSh 10,000,000 recurring monthly revenue
         </p>
 
-        <p>Scalable. Sustainable. Profitable.</p>
+        <p className="highlight">Scalable. Sustainable. Profitable.</p>
       </section>
 
       {/* QUOTE */}
       <section className="quote slide-section">
         <p>
           Today: Kenya. Tomorrow: East Africa. Future: Smart Grids Across
-          Emerging Markets.
+          Emerging Markets.GridGuard is just not a device but a foundation of a
+          smarter African Power infrastructure.”
         </p>
         <span>~ Kemboi Pheniline Jerono</span>
       </section>

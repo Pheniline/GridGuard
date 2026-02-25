@@ -164,11 +164,13 @@ body {
 
 .bullet-list li {
   margin: 10px 0;
-  color: #00ffcc;
+  color: rgba(16, 185, 129, 0.8);
 }
 
 .intro-text {
   font-style: italic;
+  color: black;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 .alert-text {
@@ -236,8 +238,8 @@ body {
 }
 
 .quote {
-  background: #020617;
-  color: white;
+  background: #c0fdfb;
+  color: black;
   text-align: center;
   padding: 100px 20px;
   font-style: italic;
