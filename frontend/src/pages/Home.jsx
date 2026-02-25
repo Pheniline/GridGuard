@@ -110,11 +110,15 @@ function Home() {
       {/* ECONOMIC IMPACT */}
       <section id="impact" className="section">
         <h2>Economic Impact</h2>
-        <p>
-          A 5% reduction in non-technical losses translates into increased
-          revenue collection, reduced transformer replacement costs, improved
-          reliability and enhanced operational efficiency.
-        </p>
+
+        <p>Even a 5% reduction in non-technical losses can generate:</p>
+
+        <ul className="bullet-list">
+          <li>Increased revenue collection</li>
+          <li>Reduced transformer replacement costs</li>
+          <li>Lower outage response costs</li>
+          <li>Higher customer satisfaction</li>
+        </ul>
       </section>
 
       {/* BUSINESS MODEL */}
