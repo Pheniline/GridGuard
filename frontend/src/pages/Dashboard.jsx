@@ -6,23 +6,31 @@ function Dashboard() {
   const alarmRef = useRef(null);
 
   useEffect(() => {
-    // Create audio object once
+    // Initialize alarm audio
     alarmRef.current = new Audio("/alarm.mp3");
     alarmRef.current.loop = false;
 
-    const interval = setInterval(() => {
-      axios
-        .get("https://gridguard.onrender.com/api/transformer")
-        .then((res) => {
-          setData(res.data);
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          "https://gridguard.onrender.com/api/transformer",
+        );
+        setData(res.data);
 
-          // Play alarm only when theft becomes true
-          if (res.data.theftDetected || res.data.overloadRisk) {
-            alarmRef.current.play().catch(() => {});
-          }
-        })
-        .catch((err) => console.error(err));
-    }, 2000);
+        if (res.data.theftDetected || res.data.overloadRisk) {
+          // Play alarm safely
+          alarmRef.current.play().catch((err) => {
+            console.warn("Audio failed to play:", err);
+          });
+        }
+      } catch (err) {
+        console.error("Failed to fetch transformer data:", err);
+      }
+    };
+
+    // Fetch immediately, then every 2 seconds
+    fetchData();
+    const interval = setInterval(fetchData, 2000);
 
     return () => clearInterval(interval);
   }, []);
