@@ -121,14 +121,19 @@ function Home() {
         </ul>
       </section>
 
-      {/* BUSINESS MODEL */}
-      <section id="business" className="model">
+      <section id="business" className="section">
         <h2>Business Model</h2>
+
+        <p>GRIDGUARD operates under a Monitoring-as-a-Service (MaaS) model.</p>
+
         <p>
-          GRIDGUARD operates under a Monitoring-as-a-Service (MaaS) model.
-          Subscription per transformer enables scalable recurring revenue while
-          delivering measurable financial savings.
+          Example Projection:
+          <br />
+          5,000 transformers × KSh 2,000 per month
+          <br />= KSh 10,000,000 monthly recurring revenue
         </p>
+
+        <p>Scalable. Sustainable. Profitable.</p>
       </section>
 
       {/* QUOTE SECTION */}
