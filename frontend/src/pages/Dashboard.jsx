@@ -17,7 +17,7 @@ function Dashboard() {
           setData(res.data);
 
           // Play alarm only when theft becomes true
-          if (res.data.theftDetected) {
+          if (res.data.theftDetected || res.data.overloadRisk) {
             alarmRef.current.play().catch(() => {});
           }
         })
