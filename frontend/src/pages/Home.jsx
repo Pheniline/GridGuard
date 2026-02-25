@@ -51,6 +51,30 @@ function Home() {
           infrastructure.
         </p>
       </section>
+      <section className="section">
+        <h2>Proposed Solution</h2>
+
+        <p>
+          GRIDGUARD is an IoT-based smart monitoring system installed directly
+          at distribution transformers.
+        </p>
+
+        <ul className="bullet-list">
+          <li>Measures total outgoing current</li>
+          <li>Monitors voltage stability</li>
+          <li>Tracks transformer temperature</li>
+          <li>Detects load imbalance</li>
+          <li>Analyzes consumption irregularities</li>
+        </ul>
+
+        <p>
+          The system compares transformer output against total registered
+          customer consumption. Any mismatch beyond acceptable tolerance
+          triggers a theft alert.
+        </p>
+
+        <p>GRIDGUARD does not wait for failure — it prevents it.</p>
+      </section>
       {/* TECHNOLOGICAL STACK */}
       <section id="tech" className="tech">
         <h2>Technological Stack</h2>
