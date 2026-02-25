@@ -14,24 +14,43 @@ function Home() {
             <a href="#business">Business Model</a>
           </div>
         </nav>
-
-        <div className="hero-content">
-          <h1>Intelligent Transformer Monitoring System</h1>
-          <p>Turning passive transformers into smart grid assets.</p>
-        </div>
       </section>
 
-      {/* ABOUT SECTION */}
       <section id="about" className="section">
-        <h2>Problem & Proposed Solution</h2>
+        <h2>Introduction</h2>
+
+        <p className="intro-text">
+          “At 8:30 PM in a residential estate, lights begin to flicker. Moments
+          later, a loud explosion plunges the neighborhood into darkness.
+          Businesses shut down. Students stop studying. Essential services are
+          interrupted. The transformer has failed due to overload — without
+          warning. Now imagine if engineers had received a real-time alert 12
+          hours before failure.”
+        </p>
+
+        <p>This is the problem GRIDGUARD is designed to solve.</p>
+
+        <h3>Problem Statement</h3>
+
         <p>
-          Grid systems face electricity theft, transformer overloading, delayed
-          fault detection and limited real-time monitoring. GRIDGUARD transforms
-          distribution transformers into intelligent, connected assets capable
-          of predictive analysis and real-time alerts.
+          Kenya Power and Lighting Company is mandated to transmit, distribute
+          and retail electricity across Kenya. However, the national grid faces
+          major challenges including:
+        </p>
+
+        <ul className="bullet-list">
+          <li>Electricity theft and illegal connections</li>
+          <li>Meter bypass and revenue leakage</li>
+          <li>Transformer overloading</li>
+          <li>Delayed fault detection</li>
+          <li>Limited real-time monitoring infrastructure</li>
+        </ul>
+
+        <p>
+          This is reactive infrastructure. Kenya requires predictive
+          infrastructure.
         </p>
       </section>
-
       {/* TECHNOLOGICAL STACK */}
       <section id="tech" className="tech">
         <h2>Technological Stack</h2>
