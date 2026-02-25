@@ -119,7 +119,7 @@ function Home() {
       <section className="section light slide-section">
         <h2>System Architecture</h2>
         <img
-          src="/system-diagram.png"
+          src="images/system-diagram.png"
           alt="GridGuard System Architecture"
           className="architecture-img"
         />
