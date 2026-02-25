@@ -66,6 +66,8 @@ function StatusCard({ title, status, trueText, falseText }) {
     <div className={`card status ${status ? "danger" : "safe"}`}>
       <h2>{title}</h2>
       <p>{status ? trueText : falseText}</p>
+
+      {status && <div className="alert-text">⚠ ALERT ACTIVE</div>}
     </div>
   );
 }
