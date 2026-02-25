@@ -156,3 +156,18 @@ body {
     opacity: 1;
   }
 }
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.bullet-list li {
+  margin: 10px 0;
+  color: #00ffcc;
+}
+
+.intro-text {
+  font-style: italic;
+  margin-bottom: 20px;
+}
