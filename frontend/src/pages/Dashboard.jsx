@@ -3,12 +3,18 @@ import axios from "axios";
 import { useEffect, useState, useRef } from "react";
 function App() {
   const [data, setData] = useState(null);
-
+  const alarmRef = useRef(new Audio("/alarm.mp3"));
   useEffect(() => {
     const interval = setInterval(() => {
       axios
         .get("http://localhost:5000/api/transformer")
-        .then((res) => setData(res.data))
+        .then((res) => {
+          setData(res.data);
+
+          if (res.data.theftDetected) {
+            alarmRef.current.play();
+          }
+        })
         .catch((err) => console.error(err));
     }, 2000);
 
