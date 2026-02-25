@@ -23,6 +23,8 @@ app.get("/api/transformer", (req, res) => {
   res.json(generateData());
 });
 
-app.listen(5000, () => {
-  console.log("GRIDGUARD Server running on port 5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`GRIDGUARD Server running on port ${PORT}`);
 });
