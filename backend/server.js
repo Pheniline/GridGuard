@@ -6,7 +6,7 @@ app.use(cors());
 
 function generateData() {
   const load = 60 + Math.random() * 50;
-  const theft = Math.random() > 0.85;
+  const theft = load > 95; // More logical detection
 
   return {
     transformerId: "TX-014-KEN",
@@ -17,20 +17,6 @@ function generateData() {
     theftDetected: theft,
     overloadRisk: load > 90,
   };
-}
-const status = document.getElementById("theftStatus");
-
-// Example toggle
-function setTheftStatus(isSafe) {
-  if (isSafe) {
-    status.classList.remove("danger");
-    status.classList.add("safe");
-    status.textContent = "All clear";
-  } else {
-    status.classList.remove("safe");
-    status.classList.add("danger");
-    status.textContent = "Theft detected!";
-  }
 }
 
 app.get("/api/transformer", (req, res) => {
