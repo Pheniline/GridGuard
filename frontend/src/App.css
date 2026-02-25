@@ -171,3 +171,24 @@ body {
   font-style: italic;
   margin-bottom: 20px;
 }
+.alert-text {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ff4d4d;
+}
+
+.blink {
+  animation: blinkAnimation 1s infinite;
+}
+
+@keyframes blinkAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
