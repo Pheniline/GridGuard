@@ -12,7 +12,7 @@ function Dashboard() {
 
     const interval = setInterval(() => {
       axios
-        .get("https://gridguard.onrender.com/api/transformer")
+        .get("/api/transformer")
         .then((res) => {
           setData(res.data);
 
