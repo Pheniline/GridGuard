@@ -1,3 +1,4 @@
+/* ------------------- BASE ------------------- */
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
@@ -6,34 +7,18 @@ body {
   scroll-behavior: smooth;
 }
 
+/* ------------------- HERO ------------------- */
 .hero {
   height: 100vh;
   background: linear-gradient(135deg, #0f172a, #020617);
-  padding: 30px;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  color: #00ffcc;
-}
-
-.nav-links a {
-  margin-left: 20px;
-  text-decoration: none;
   color: white;
-}
-
-.nav-links a:hover {
-  color: #00ffcc;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
 .hero-content {
-  margin-top: 150px;
+  margin: auto;
   text-align: center;
 }
 
@@ -42,80 +27,26 @@ body {
   color: #00ffcc;
 }
 
-.section {
-  padding: 80px 40px;
-  text-align: center;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.card {
-  background: #111827;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
-}
-
-.demo-btn {
+.highlight {
+  font-weight: bold;
   margin-top: 20px;
-  padding: 15px 30px;
-  background: #00ffcc;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  cursor: pointer;
 }
 
-.demo-btn:hover {
-  background: #00ccaa;
-}
-
-.architecture-img {
-  max-width: 80%;
-  margin-top: 40px;
-  border-radius: 15px;
-}
-
-.quote {
-  background: #020617;
-  padding: 60px;
-  font-style: italic;
-  text-align: center;
-}
-.status.safe {
-  background: #065f46;
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.8);
-}
-
-.status.danger {
-  background: #7f1d1d;
-  animation: dangerGlow 1s infinite alternate;
-}
-
-@keyframes dangerGlow {
-  from {
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-  }
-  to {
-    box-shadow: 0 0 30px rgba(255, 0, 0, 1);
-  }
-}
-/* 1. Navigation background */
+/* ------------------- NAVIGATION ------------------- */
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #111827; /* dark background for nav */
+  background: #111827;
   padding: 15px 30px;
   border-radius: 0 0 15px 15px;
 }
 
-/* 2. Sliding underline on links */
+.logo {
+  color: #00ffcc;
+  font-weight: bold;
+}
+
 .nav-links a {
   position: relative;
   margin-left: 20px;
@@ -138,64 +69,13 @@ body {
 .nav-links a:hover::after {
   width: 100%;
 }
-.alert-text {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #ff0000;
-  animation: blink 1s infinite;
+
+/* ------------------- SECTIONS ------------------- */
+.section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.bullet-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
-
-.bullet-list li {
-  margin: 10px 0;
-  color: rgba(16, 185, 129, 0.8);
-}
-
-.intro-text {
-  font-style: italic;
-  color: black;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-.alert-text {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #ff4d4d;
-}
-
-.blink {
-  animation: blinkAnimation 1s infinite;
-}
-
-@keyframes blinkAnimation {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* SLIDE ANIMATION */
 .slide-section {
   opacity: 0;
   transform: translateY(60px);
@@ -207,50 +87,154 @@ body {
   transform: translateY(0);
 }
 
-/* Alternating Backgrounds */
-.light {
-  background: #cbd5e1;
-  color: #111;
+/* ------------------- GRID CARDS ------------------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
 }
 
-.dark {
-  background: #0f172a;
-  color: white;
-}
-
-/* Hero */
-.hero {
-  height: 100vh;
-  background: linear-gradient(135deg, #0f172a, #020617);
-  color: white;
-  display: flex;
-  flex-direction: column;
-}
-
-.hero-content {
-  margin: auto;
-  text-align: center;
-}
-
-.highlight {
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-.quote {
-  background: #c0fdfb;
-  color: black;
-  text-align: center;
-  padding: 100px 20px;
-  font-style: italic;
-}
-/* TECHNOLOGY STACK CARDS */
-#tech .card {
-  background: #111827; /* dark card background */
-  color: #c0fdfb; /* softer cyan/teal, not too bright */
+.card {
+  background: #111827;
+  color: #c0fdfb;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
   text-align: center;
   font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* STATUS CARDS */
+.status.safe {
+  background: #065f46;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.8);
+}
+
+.status.danger {
+  background: #7f1d1d;
+  animation: dangerGlow 1s infinite alternate;
+}
+
+@keyframes dangerGlow {
+  from {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(255, 0, 0, 1);
+  }
+}
+
+.alert-text {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ff4d4d;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blinkAnimation 1s infinite;
+}
+
+@keyframes blinkAnimation {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ------------------- BUTTONS ------------------- */
+.demo-btn {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: #00ffcc;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.demo-btn:hover {
+  background: #00ccaa;
+}
+
+/* ------------------- QUOTE ------------------- */
+.quote {
+  background: #c0fdfb;
+  color: black;
+  text-align: center;
+  padding: 80px 20px;
+  font-style: italic;
+  border-radius: 12px;
+}
+
+/* ------------------- TECHNOLOGY CARDS ------------------- */
+#tech .card {
+  background: #111827;
+  color: #c0fdfb;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ------------------- MEDIA QUERIES (RESPONSIVE) ------------------- */
+@media (max-width: 900px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .demo-btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+
+  .quote {
+    padding: 60px 15px;
+    font-size: 0.9rem;
+  }
 }
