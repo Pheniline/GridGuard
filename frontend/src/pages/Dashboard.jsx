@@ -1,18 +1,24 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { useEffect, useState, useRef } from "react";
-function App() {
+import axios from "axios";
+
+function Dashboard() {
   const [data, setData] = useState(null);
-  const alarmRef = useRef(new Audio("/alarm.mp3"));
+  const alarmRef = useRef(null);
+
   useEffect(() => {
+    // Create audio object once
+    alarmRef.current = new Audio("/alarm.mp3");
+    alarmRef.current.loop = false;
+
     const interval = setInterval(() => {
       axios
         .get("http://localhost:5000/api/transformer")
         .then((res) => {
           setData(res.data);
 
+          // Play alarm only when theft becomes true
           if (res.data.theftDetected) {
-            alarmRef.current.play();
+            alarmRef.current.play().catch(() => {});
           }
         })
         .catch((err) => console.error(err));
@@ -67,9 +73,9 @@ function StatusCard({ title, status, trueText, falseText }) {
       <h2>{title}</h2>
       <p>{status ? trueText : falseText}</p>
 
-      {status && <div className="alert-text">⚠ ALERT ACTIVE</div>}
+      {status && <div className="alert-text blink">⚠ ALERT ACTIVE</div>}
     </div>
   );
 }
 
-export default App;
+export default Dashboard;
