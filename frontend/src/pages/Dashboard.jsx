@@ -15,19 +15,18 @@ function Dashboard() {
         const res = await axios.get(
           "https://gridguard.onrender.com/api/transformer",
         );
+        console.log("Fetched data:", res.data); // <- ADD THIS
         setData(res.data);
 
         if (res.data.theftDetected || res.data.overloadRisk) {
-          // Play alarm safely
           alarmRef.current.play().catch((err) => {
-            console.warn("Audio failed to play:", err);
+            console.warn("Audio failed:", err);
           });
         }
       } catch (err) {
-        console.error("Failed to fetch transformer data:", err);
+        console.error("API error:", err);
       }
     };
-
     // Fetch immediately, then every 2 seconds
     fetchData();
     const interval = setInterval(fetchData, 2000);
