@@ -64,11 +64,10 @@ function Home() {
         </p>
 
         <ul className="bullet-list">
-          <li>Electricity theft and illegal connections</li>
-          <li>Meter bypass and revenue leakage</li>
-          <li>Transformer overloading</li>
-          <li>Delayed fault detection</li>
-          <li>Limited real-time monitoring</li>
+          <li>Electricity is stolen through illegal connections.</li>
+          <li>Faults are detected too late.</li>
+          <li>Transformer overload and explode unexpectedly.</li>
+          <li>Engineers only respond after customers complain.</li>
         </ul>
 
         <p className="highlight">
@@ -81,17 +80,14 @@ function Home() {
       <section className="section light slide-section">
         <h2>Proposed Solution</h2>
 
-        <p>
-          GRIDGUARD transforms passive transformers into intelligent, connected,
-          data-driven assets through ;
-        </p>
+        <p>GRIDGUARD a small smart device installed on transformers.It:</p>
 
         <ul className="bullet-list">
-          <li>Real-time current measurement</li>
-          <li>Voltage stability monitoring</li>
-          <li>Temperature tracking</li>
-          <li>Load imbalance detection</li>
-          <li>Consumption anomaly analysis</li>
+          <li>Report its transformer's health in real time</li>
+          <li>Detect illegal connections instantly</li>
+          <li>Predict overload before explosion</li>
+          <li> Alert engineers automatically</li>
+          <li> Provide live dashboards nationwide</li>
         </ul>
 
         <p>It then compares:</p>
@@ -106,7 +102,8 @@ function Home() {
         </p>
 
         <p className="highlight">
-          GridGuard does not wait for failure — it prevents it.
+          GridGuard does not wait for failure — it prevents it.GridGuard
+          transforms passive transformers into intelligent assets.
         </p>
       </section>
 
@@ -157,10 +154,10 @@ function Home() {
         </p>
 
         <ul className="bullet-list">
-          <li>Increased revenue collection</li>
-          <li>Reduced transformer replacement costs</li>
-          <li>Lower outage response costs</li>
-          <li>Higher customer satisfaction</li>
+          <li>Recover millions in lost revenue annually</li>
+          <li>Reduce emergency transformer replacements</li>
+          <li>Cut outage response costs</li>
+          <li>Improve customer satisfaction</li>
         </ul>
 
         <p className="highlight">
@@ -197,6 +194,7 @@ function Home() {
           smarter African Power infrastructure.”
         </p>
         <span>~ Kemboi Pheniline Jerono</span>
+        <span>Electical Engineer Student</span>
       </section>
     </div>
   );
