@@ -40,7 +40,7 @@ mongoose
     console.log("MongoDB connected successfully");
   })
   .catch((error) => {
-    console.error("MongoDB connection failed:", error);
+    console.error("MongoDB connection failed:", error.message);
   });
 
 /*
@@ -50,8 +50,11 @@ API ROUTES
 */
 
 app.use("/api/transformers", transformerRoutes);
+
 app.use("/api/smart-meters", smartMeterRoutes);
+
 app.use("/api/solar", solarRoutes);
+
 app.use("/api/batteries", batteryRoutes);
 
 /*
@@ -75,7 +78,6 @@ ALL GRID DATA
 
 app.get("/api/grid", async (req, res) => {
   try {
-    // Get latest data from each collection
     const smartMeter = await SmartMeter.findOne().sort({
       createdAt: -1,
     });
@@ -151,7 +153,7 @@ app.get("/api/grid", async (req, res) => {
 
     /*
     ==============================================
-    SEND DATA TO FRONTEND
+    RESPONSE
     ==============================================
     */
 
@@ -163,7 +165,7 @@ app.get("/api/grid", async (req, res) => {
       energyManagement,
     });
   } catch (error) {
-    console.error("Error fetching grid data:", error);
+    console.error("Error fetching grid data:", error.message);
 
     res.status(500).json({
       message: "Failed to fetch grid data",

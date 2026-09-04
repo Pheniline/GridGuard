@@ -1,16 +1,19 @@
 const express = require("express");
-
 const router = express.Router();
 
 const Battery = require("../models/Battery");
 
 /*
+==================================================
 GET ALL BATTERIES
+==================================================
 */
 
 router.get("/", async (req, res) => {
   try {
-    const batteries = await Battery.find();
+    const batteries = await Battery.find().sort({
+      createdAt: -1,
+    });
 
     res.json(batteries);
   } catch (error) {
@@ -22,7 +25,9 @@ router.get("/", async (req, res) => {
 });
 
 /*
+==================================================
 GET ONE BATTERY
+==================================================
 */
 
 router.get("/:id", async (req, res) => {
@@ -38,14 +43,16 @@ router.get("/:id", async (req, res) => {
     res.json(battery);
   } catch (error) {
     res.status(500).json({
-      message: "Error fetching battery",
+      message: "Failed to fetch battery",
       error: error.message,
     });
   }
 });
 
 /*
+==================================================
 CREATE BATTERY
+==================================================
 */
 
 router.post("/", async (req, res) => {
@@ -64,7 +71,9 @@ router.post("/", async (req, res) => {
 });
 
 /*
+==================================================
 UPDATE BATTERY
+==================================================
 */
 
 router.patch("/:id", async (req, res) => {
@@ -90,7 +99,9 @@ router.patch("/:id", async (req, res) => {
 });
 
 /*
+==================================================
 DELETE BATTERY
+==================================================
 */
 
 router.delete("/:id", async (req, res) => {

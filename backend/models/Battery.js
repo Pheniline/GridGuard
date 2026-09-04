@@ -6,6 +6,7 @@ const batterySchema = new mongoose.Schema(
       type: String,
       required: true,
       unique: true,
+      trim: true,
     },
 
     soc: {
@@ -36,7 +37,6 @@ const batterySchema = new mongoose.Schema(
       default: "STANDBY",
     },
   },
-
   {
     timestamps: true,
   },

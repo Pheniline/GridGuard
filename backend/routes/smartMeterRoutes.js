@@ -1,16 +1,19 @@
 const express = require("express");
-
 const router = express.Router();
 
 const SmartMeter = require("../models/SmartMeter");
 
 /*
+==================================================
 GET ALL SMART METERS
+==================================================
 */
 
 router.get("/", async (req, res) => {
   try {
-    const meters = await SmartMeter.find();
+    const meters = await SmartMeter.find().sort({
+      createdAt: -1,
+    });
 
     res.json(meters);
   } catch (error) {
@@ -22,7 +25,9 @@ router.get("/", async (req, res) => {
 });
 
 /*
+==================================================
 GET ONE SMART METER
+==================================================
 */
 
 router.get("/:id", async (req, res) => {
@@ -38,14 +43,16 @@ router.get("/:id", async (req, res) => {
     res.json(meter);
   } catch (error) {
     res.status(500).json({
-      message: "Error fetching smart meter",
+      message: "Failed to fetch smart meter",
       error: error.message,
     });
   }
 });
 
 /*
+==================================================
 CREATE SMART METER
+==================================================
 */
 
 router.post("/", async (req, res) => {
@@ -64,7 +71,9 @@ router.post("/", async (req, res) => {
 });
 
 /*
+==================================================
 UPDATE SMART METER
+==================================================
 */
 
 router.patch("/:id", async (req, res) => {
@@ -90,7 +99,9 @@ router.patch("/:id", async (req, res) => {
 });
 
 /*
+==================================================
 DELETE SMART METER
+==================================================
 */
 
 router.delete("/:id", async (req, res) => {

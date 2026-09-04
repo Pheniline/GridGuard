@@ -6,6 +6,7 @@ const smartMeterSchema = new mongoose.Schema(
       type: String,
       required: true,
       unique: true,
+      trim: true,
     },
 
     voltage: {
@@ -31,6 +32,8 @@ const smartMeterSchema = new mongoose.Schema(
     powerFactor: {
       type: Number,
       required: true,
+      min: 0,
+      max: 1,
     },
 
     frequency: {
@@ -38,7 +41,6 @@ const smartMeterSchema = new mongoose.Schema(
       required: true,
     },
   },
-
   {
     timestamps: true,
   },

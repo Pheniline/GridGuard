@@ -1,16 +1,19 @@
 const express = require("express");
-
 const router = express.Router();
 
 const Transformer = require("../models/Transformer");
 
 /*
+==================================================
 GET ALL TRANSFORMERS
+==================================================
 */
 
 router.get("/", async (req, res) => {
   try {
-    const transformers = await Transformer.find();
+    const transformers = await Transformer.find().sort({
+      createdAt: -1,
+    });
 
     res.json(transformers);
   } catch (error) {
@@ -22,7 +25,9 @@ router.get("/", async (req, res) => {
 });
 
 /*
+==================================================
 GET ONE TRANSFORMER
+==================================================
 */
 
 router.get("/:id", async (req, res) => {
@@ -38,14 +43,16 @@ router.get("/:id", async (req, res) => {
     res.json(transformer);
   } catch (error) {
     res.status(500).json({
-      message: "Error fetching transformer",
+      message: "Failed to fetch transformer",
       error: error.message,
     });
   }
 });
 
 /*
+==================================================
 CREATE TRANSFORMER
+==================================================
 */
 
 router.post("/", async (req, res) => {
@@ -64,7 +71,9 @@ router.post("/", async (req, res) => {
 });
 
 /*
+==================================================
 UPDATE TRANSFORMER
+==================================================
 */
 
 router.patch("/:id", async (req, res) => {
@@ -94,7 +103,9 @@ router.patch("/:id", async (req, res) => {
 });
 
 /*
+==================================================
 DELETE TRANSFORMER
+==================================================
 */
 
 router.delete("/:id", async (req, res) => {

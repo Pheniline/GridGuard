@@ -1,18 +1,21 @@
 const express = require("express");
-
 const router = express.Router();
 
 const Solar = require("../models/Solar");
 
 /*
+==================================================
 GET ALL SOLAR SYSTEMS
+==================================================
 */
 
 router.get("/", async (req, res) => {
   try {
-    const systems = await Solar.find();
+    const solarSystems = await Solar.find().sort({
+      createdAt: -1,
+    });
 
-    res.json(systems);
+    res.json(solarSystems);
   } catch (error) {
     res.status(500).json({
       message: "Failed to fetch solar systems",
@@ -22,30 +25,34 @@ router.get("/", async (req, res) => {
 });
 
 /*
+==================================================
 GET ONE SOLAR SYSTEM
+==================================================
 */
 
 router.get("/:id", async (req, res) => {
   try {
-    const system = await Solar.findById(req.params.id);
+    const solar = await Solar.findById(req.params.id);
 
-    if (!system) {
+    if (!solar) {
       return res.status(404).json({
         message: "Solar system not found",
       });
     }
 
-    res.json(system);
+    res.json(solar);
   } catch (error) {
     res.status(500).json({
-      message: "Error fetching solar system",
+      message: "Failed to fetch solar system",
       error: error.message,
     });
   }
 });
 
 /*
+==================================================
 CREATE SOLAR SYSTEM
+==================================================
 */
 
 router.post("/", async (req, res) => {
@@ -64,7 +71,9 @@ router.post("/", async (req, res) => {
 });
 
 /*
+==================================================
 UPDATE SOLAR SYSTEM
+==================================================
 */
 
 router.patch("/:id", async (req, res) => {
@@ -90,7 +99,9 @@ router.patch("/:id", async (req, res) => {
 });
 
 /*
+==================================================
 DELETE SOLAR SYSTEM
+==================================================
 */
 
 router.delete("/:id", async (req, res) => {

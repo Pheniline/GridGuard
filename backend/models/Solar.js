@@ -6,6 +6,7 @@ const solarSchema = new mongoose.Schema(
       type: String,
       required: true,
       unique: true,
+      trim: true,
     },
 
     voltage: {
@@ -34,7 +35,6 @@ const solarSchema = new mongoose.Schema(
       default: "OFF",
     },
   },
-
   {
     timestamps: true,
   },
