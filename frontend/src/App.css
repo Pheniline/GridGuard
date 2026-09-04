@@ -1,245 +1,473 @@
-/* ------------------- BASE ------------------- */
-body {
+* {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: #0f172a;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7f5;
+  color: #1f2933;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  background: #0f5132;
   color: white;
-  scroll-behavior: smooth;
-}
 
-/* ------------------- HERO ------------------- */
-.hero {
-  height: 100vh;
-  background: linear-gradient(135deg, #0f172a, #020617);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  padding: 30px 20px;
-}
+  padding: 25px 50px;
 
-.hero-content {
-  margin: auto;
-  text-align: center;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  color: #00ffcc;
-}
-
-.highlight {
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-/* ------------------- NAVIGATION ------------------- */
-.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #111827;
-  padding: 15px 30px;
-  border-radius: 0 0 15px 15px;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
-.logo {
-  color: #00ffcc;
+.header h1 {
+  font-size: 32px;
+  letter-spacing: 2px;
 }
 
-.nav-links a {
-  position: relative;
-  margin-left: 20px;
-  text-decoration: none;
-  color: white;
-  padding-bottom: 5px;
+.header p {
+  margin-top: 5px;
+  opacity: 0.85;
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background: #00ffcc;
-  transition: width 0.3s ease;
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-weight: bold;
 }
 
-.nav-links a:hover::after {
-  width: 100%;
+.status-dot {
+  width: 12px;
+  height: 12px;
+
+  background: #4ade80;
+
+  border-radius: 50%;
 }
 
-/* ------------------- SECTIONS ------------------- */
-.section {
-  padding: 80px 40px;
-  text-align: center;
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+  padding: 35px 50px;
+  max-width: 1400px;
+  margin: auto;
 }
 
-.light {
-  background: #cbd5e1;
-  color: #111;
+.section-title {
+  margin: 25px 0 15px;
+
+  font-size: 22px;
+
+  color: #0f5132;
 }
 
-.dark {
-  background: #0f172a;
-  color: white;
-}
-
-/* ------------------- SLIDE ANIMATION ------------------- */
-.slide-section {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: all 0.8s ease-out;
-}
-
-.slide-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ------------------- GRID CARDS ------------------- */
-.grid {
+.cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
   gap: 20px;
-  margin-top: 40px;
 }
+
+/* =========================
+   CARDS
+========================= */
 
 .card {
-  background: #111827;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+  border: 1px solid #e5e7eb;
+}
+
+.card-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.card-header h2 {
+  font-size: 20px;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  background: #e8f5e9;
+
+  color: #2e7d32;
+
+  font-size: 12px;
+
+  font-weight: bold;
+}
+
+.online {
+  color: #166534;
+}
+
+/* =========================
+   DATA GRID
+========================= */
+
+.data-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 15px;
+}
+
+.data-item {
+  background: #f8fafc;
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.data-item span {
+  font-size: 13px;
+
+  color: #64748b;
+}
+
+.data-item strong {
+  font-size: 19px;
+}
+
+/* =========================
+   SOLAR
+========================= */
+
+.solar-main {
+  text-align: center;
+
+  margin-bottom: 25px;
+}
+
+.big-value {
+  font-size: 45px;
+
+  font-weight: bold;
+
+  color: #d97706;
+}
+
+.big-value span {
+  font-size: 20px;
+}
+
+.solar-main p {
+  color: #64748b;
+}
+
+/* =========================
+   BATTERY
+========================= */
+
+.battery-container {
+  margin-bottom: 25px;
+}
+
+.battery {
+  height: 35px;
+
+  background: #e5e7eb;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.battery-level {
+  height: 100%;
+
+  background: #22c55e;
+
+  transition: width 0.5s ease;
+}
+
+.battery-percentage {
+  text-align: center;
+
+  margin-top: 8px;
+
+  font-weight: bold;
+}
+
+/* =========================
+   TRANSFORMER
+========================= */
+
+.transformer-id {
+  background: #eef2ff;
+
+  padding: 7px 12px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+}
+
+.risk-box {
+  margin-top: 20px;
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.risk-box.low {
+  background: #dcfce7;
+
+  color: #166534;
+}
+
+.risk-box.medium {
+  background: #fef3c7;
+
+  color: #92400e;
+}
+
+.risk-box.high {
+  background: #fee2e2;
+
+  color: #991b1b;
+}
+
+.theft-box {
+  margin-top: 12px;
+
+  padding: 15px;
+
+  background: #f1f5f9;
+
+  border-radius: 10px;
+
+  display: flex;
+
+  justify-content: space-between;
+}
+
+/* =========================
+   ENERGY FLOW
+========================= */
+
+.energy-flow {
   text-align: center;
 }
 
-.status.safe {
-  background: #065f46;
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.8);
+.energy-source {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 30px;
+
+  margin: 30px 0;
+
+  flex-wrap: wrap;
 }
 
-.status.danger {
-  background: #7f1d1d;
-  animation: dangerGlow 1s infinite alternate;
+.source {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 5px;
+
+  font-size: 28px;
 }
 
-@keyframes dangerGlow {
-  from {
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-  }
-  to {
-    box-shadow: 0 0 30px rgba(255, 0, 0, 1);
-  }
+.source span {
+  font-size: 14px;
+
+  color: #64748b;
 }
 
-.alert-text {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #ff4d4d;
-  animation: blink 1s infinite;
+.source strong {
+  font-size: 16px;
 }
 
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+.arrow {
+  font-size: 30px;
 }
 
-.blink {
-  animation: blinkAnimation 1s infinite;
-}
+.energy-decision {
+  background: #ecfdf5;
 
-@keyframes blinkAnimation {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
+  padding: 20px;
 
-/* ------------------- BUTTONS ------------------- */
-.demo-btn {
-  margin-top: 20px;
-  padding: 15px 30px;
-  background: #00ffcc;
-  border: none;
   border-radius: 10px;
-  font-size: 1rem;
+}
+
+.energy-decision h3 {
+  color: #0f5132;
+
+  margin: 8px 0;
+}
+
+/* =========================
+   AI
+========================= */
+
+.ai-card {
+  background: #0f5132;
+
+  color: white;
+
+  padding: 25px;
+
+  border-radius: 15px;
+}
+
+.ai-card h3 {
+  margin-bottom: 10px;
+}
+
+.ai-values {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 15px;
+
+  margin-top: 20px;
+}
+
+.ai-values div {
+  background: rgba(255, 255, 255, 0.1);
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.loading-screen,
+.error-screen {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+.loading-screen h1,
+.error-screen h1 {
+  color: #0f5132;
+}
+
+.error-screen button {
+  padding: 10px 20px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #0f5132;
+
+  color: white;
+
   cursor: pointer;
 }
 
-.demo-btn:hover {
-  background: #00ccaa;
-}
+/* =========================
+   FOOTER
+========================= */
 
-/* ------------------- QUOTE ------------------- */
-.quote {
-  padding: 60px;
-  font-style: italic;
+footer {
   text-align: center;
-  background: #020617; /* keep original quote color if used dark */
-  color: white;
+
+  padding: 30px;
+
+  color: #64748b;
 }
 
-/* ------------------- TECHNOLOGY CARDS ------------------- */
-#tech .card {
-  background: #111827;
-  color: #c0fdfb;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
-  text-align: center;
-  font-weight: 500;
-}
+/* =========================
+   MOBILE
+========================= */
 
-/* ------------------- MEDIA QUERIES (RESPONSIVE) ------------------- */
-@media (max-width: 900px) {
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
+@media (max-width: 700px) {
+  .header {
+    padding: 20px;
 
-  .nav {
     flex-direction: column;
+
     align-items: flex-start;
-  }
 
-  .nav-links {
-    margin-top: 10px;
-  }
-
-  .grid {
     gap: 15px;
   }
-}
 
-@media (max-width: 600px) {
-  .hero-content h1 {
-    font-size: 2rem;
+  .dashboard {
+    padding: 20px;
   }
 
-  .grid {
+  .data-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
   }
 
-  .card {
-    padding: 15px;
-    font-size: 0.9rem;
-  }
-
-  .demo-btn {
-    width: 100%;
-    padding: 12px 0;
-  }
-
-  .quote {
-    padding: 40px 15px;
-    font-size: 0.9rem;
+  .ai-values {
+    grid-template-columns: 1fr;
   }
 }
