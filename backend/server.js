@@ -1,3 +1,12 @@
+const mongoose = require("mongoose");
+
+const transformerRoutes = require("./routes/transformerRoutes");
+
+const smartMeterRoutes = require("./routes/smartMeterRoutes");
+
+const solarRoutes = require("./routes/solarRoutes");
+
+const batteryRoutes = require("./routes/batteryRoutes");
 const express = require("express");
 const cors = require("cors");
 
